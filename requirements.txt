@@ -1,0 +1,4 @@
+flask
+datetime
+smtplib
+python-dotenv

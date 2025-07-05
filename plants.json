@@ -1,0 +1,75 @@
+{
+    "Monstera 1": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 7,
+      "fertilizeFreq": 30
+    },
+    "Monstera 2": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 7,
+      "fertilizeFreq": 30
+    },
+    "Peace Lily": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 3,
+      "fertilizeFreq": 30
+    },
+    "Pilea": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 5,
+      "fertilizeFreq": 30
+    },
+    "Pathos": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 7,
+      "fertilizeFreq": 45
+    },
+    "Money Tree": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 10,
+      "fertilizeFreq": 60
+    },
+    "Jade": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 14,
+      "fertilizeFreq": 60
+    },
+    "Dwarf Jade": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 14,
+      "fertilizeFreq": 60
+    },
+    "Cactus": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 21,
+      "fertilizeFreq": 90
+    },
+    "Copper": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 7,
+      "fertilizeFreq": 30
+    },
+    "Venus Flytrap": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 2,
+      "fertilizeFreq": 60
+    },
+    "Fukien": {
+      "lastWatered": "",
+      "fertilized": "",
+      "waterFreq": 3,
+      "fertilizeFreq": 30
+    }
+  }
+  
