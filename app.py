@@ -94,8 +94,12 @@ def update_plant():
 
     plant_name = data.get("name")
     if not plant_name or plant_name not in plants:
-        plants[plant_name] = {}
-        return jsonify({plant_name: plants[plant_name]}), 200
+        plants[plant_name] = {
+            "lastWatered": "",
+            "fertilized": "",
+            "waterFreq": None,
+            "fertilizeFreq": None
+        }
 
     # Update the fields (if provided)
     if "lastWatered" in data:
