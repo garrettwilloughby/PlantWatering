@@ -15,6 +15,20 @@ def load_data():
         return []
 
 
+def format_plants(plants):
+    formatted = []
+    for name, details in plants.items():
+        entry = (
+            f"🪴 {name}\n"
+            f"  Last Watered: {details.get('lastWatered', 'N/A') or 'Not yet'}\n"
+            f"  Last Fertilized: {details.get('fertilized', 'N/A') or 'Not yet'}\n"
+            f"  Water Every: {details.get('waterFreq')} days\n"
+            f"  Fertilize Every: {details.get('fertilizeFreq')} days\n"
+        )
+        formatted.append(entry)
+    return "\n".join(formatted)
+
+
 def save_data(data):
     with open(DATA_FILE, 'w') as f:
         json.dump(data, f, indent=2)
@@ -97,7 +111,9 @@ def due_plants():
     plants = load_data()
     due = get_plants_needing_water(plants)
     if due:
-        send_email("Plants that need watering today", due)
+        body = "The following plants need fertilizing today:\n\n" + \
+            "\n".join(due)
+        send_email("Plants that need watering today", body)
     else:
         send_email("No plants need watering today", ":)")
     return jsonify({"needsWater": due}), 200
@@ -108,10 +124,19 @@ def due_fertilizing():
     plants = load_data()
     due = get_plants_needing_fertilizer(plants)
     if due:
-        send_email("Plants that need fertilizing today", due)
+        body = "The following plants need fertilizing today:\n\n" + \
+            "\n".join(due)
+        send_email("Plants that need fertilizing today", body)
     else:
         send_email("No plants need fertilizing today", ":)")
     return jsonify({"needsFertilizer": due}), 200
+
+
+@app.route('/plants', methods=['GET'])
+def get_plants():
+    plants = load_data()
+    formatted = format_plants(plants)
+    return f"<pre>{formatted}</pre>"  # Show it nicely in browser
 
 
 if __name__ == '__main__':
