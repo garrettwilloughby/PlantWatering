@@ -94,7 +94,8 @@ def update_plant():
 
     plant_name = data.get("name")
     if not plant_name or plant_name not in plants:
-        return jsonify({"error": "Plant not found"}), 404
+        plants[plant_name] = {}
+        return jsonify({plant_name: plants[plant_name]}), 200
 
     # Update the fields (if provided)
     if "lastWatered" in data:
